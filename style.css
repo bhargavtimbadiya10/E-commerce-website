@@ -1,0 +1,245 @@
+/* Custom CSS for E-Commerce Project */
+:root {
+    --primary: #3498db;
+    --secondary: #2ecc71;
+    --dark: #2c3e50;
+    --light: #ecf0f1;
+    --danger: #e74c3c;
+    --warning: #f39c12;
+    --gray: #95a5a6;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar Styling */
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--light) !important;
+}
+
+.navbar-dark {
+    background: linear-gradient(135deg, var(--dark), #34495e) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--secondary) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--secondary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Card Styling */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: var(--dark);
+    font-weight: 600;
+}
+
+/* Button Styling */
+.btn {
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--primary), #2980b9);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, #2980b9, var(--primary));
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: linear-gradient(to right, var(--secondary), #27ae60);
+    border: none;
+}
+
+.btn-success:hover {
+    background: linear-gradient(to right, #27ae60, var(--secondary));
+    transform: translateY(-2px);
+}
+
+/* Form Styling */
+.form-control {
+    border-radius: 6px;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+/* Table Styling */
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.table th {
+    background-color: var(--dark);
+    color: white;
+    font-weight: 600;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+/* Product Image Styling */
+.product-img {
+    transition: transform 0.3s ease;
+}
+
+.product-img:hover {
+    transform: scale(1.05);
+}
+
+/* Alert Styling */
+.alert {
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.alert-info {
+    background-color: rgba(52, 152, 219, 0.2);
+    color: var(--primary);
+}
+
+/* Heading Styling */
+h3 {
+    color: var(--dark);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--secondary));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Animation for page elements */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card, .table, form {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Footer styling (if you add one later) */
+.footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+/* Categories Page */
+.page-title {
+    text-align: center;
+    font-size: 28px;
+    margin: 20px 0;
+    color: #333;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.category-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+.category-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #444;
+    text-transform: capitalize;
+}

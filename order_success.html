@@ -1,0 +1,12 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="text-center py-5">
+  <h3>✅ Order Successful!</h3>
+  <p>Order ID: <b>#{{ order['id'] }}</b></p>
+  <p>Payment: <b>{{ order['payment_method'] }}</b></p>
+  <p>Deliver to: <b>{{ order['address'] }}</b></p>
+  <p class="fs-5">Total Paid: ₹ {{ '%.0f'|format(order['total']) }}</p>
+  <a class="btn btn-primary mt-3" href="{{ url_for('products') }}">Continue Shopping</a>
+</div>
+{% endblock %}

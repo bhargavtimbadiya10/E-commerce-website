@@ -1,0 +1,54 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h3 class="mb-4">📦 Checkout</h3>
+<div class="row">
+  <div class="col-md-7">
+    <form method="post">
+      <div class="mb-3">
+        <label class="form-label">Address</label>
+        <textarea name="address" class="form-control" required></textarea>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">City</label>
+          <input name="city" class="form-control" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Pincode</label>
+          <input name="pincode" class="form-control" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label d-block">Payment Method</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="payment_method" id="cod" value="COD" checked>
+          <label class="form-check-label" for="cod">Cash on Delivery (COD)</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="payment_method" id="online" value="ONLINE">
+          <label class="form-check-label" for="online">Online</label>
+        </div>
+      </div>
+      <button class="btn btn-primary">Place Order</button>
+    </form>
+  </div>
+  <div class="col-md-5">
+    <div class="card">
+      <div class="card-header">Order Summary</div>
+      <ul class="list-group list-group-flush">
+        {% for it in items %}
+        <li class="list-group-item d-flex justify-content-between">
+          <span>{{ it['name'] }} × {{ it['qty'] }}</span>
+          <span>₹ {{ '%.0f'|format(it['price'] * it['qty']) }}</span>
+        </li>
+        {% endfor %}
+        <li class="list-group-item d-flex justify-content-between fw-bold">
+          <span>Total</span>
+          <span>₹ {{ '%.0f'|format(total) }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}
